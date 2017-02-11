@@ -104,7 +104,7 @@ public class XORShiftRNG
     {
         if (max < 0) throw new ArgumentOutOfRangeException("max", max, "'max' must not be smaller than 0");
 
-        return (int) ((MAX_UINT_DIVISION_EXCLUSIVE * (int) (POSITIVE_INTEGER_BITMASK & NextRandomBits())) * max);
+        return (int) ((MAX_INT_DIVISION_EXCLUSIVE * NextInt()) * max);
     }
 
     /// <summary>
@@ -122,7 +122,7 @@ public class XORShiftRNG
     /// </summary>
     public double NextDouble()
     {
-        return (MAX_UINT_DIVISION_EXCLUSIVE * (int) (POSITIVE_INTEGER_BITMASK & NextRandomBits()));
+        return (MAX_INT_DIVISION_EXCLUSIVE * NextInt());
     }
 
     /// <summary>
