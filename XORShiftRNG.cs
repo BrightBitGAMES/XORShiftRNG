@@ -132,7 +132,7 @@ public class XORShiftRNG
     {
         if (min > max) throw new ArgumentOutOfRangeException("min", min, "'min' must not be larger than 'max'");
 
-        return min + (int) ((MAX_UINT_DIVISION_EXCLUSIVE * (double) NextRandomBits()) * (max - min));
+        return min + (double) ((MAX_UINT_DIVISION_EXCLUSIVE * (double) NextRandomBits()) * (max - min));
     }
 
     /// <summary>
